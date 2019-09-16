@@ -321,7 +321,7 @@ void GridMode::update(float elapsed) {
 	int distance = 0;
 	if (monster.till_update < 0) {
 		monster.till_update = 1;
-		monster.speed += 0.1f;
+		monster.speed += 0.025f;
 		monster.grid_coords = breadth_first(monster.grid_coords, player.grid_coords, &distance);
 
 		if (distance <= 100) {

@@ -26,5 +26,6 @@ Notes of interest:
 - Not very happy with how the game turned out, but whatever, they can't all be winners.
 - With more time, I would have made the panning better. Right now, it can make your ears bleed.
 - The monster gets faster over time.
-
+- When the character starts to shake, the monster is very close.
+ 
 This game was built with [NEST](NEST.md).
