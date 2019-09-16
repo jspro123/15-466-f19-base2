@@ -60,6 +60,17 @@ void Sound::PlayingSample::stop(float ramp) {
 	unlock();
 }
 
+void Sound::PlayingSample::set_volume(float new_volume, float ramp) {
+	lock();
+	Sound::PlayingSample::volume.set(new_volume, ramp);
+	unlock();
+}
+
+void Sound::PlayingSample::set_pan(float new_pan, float ramp) {
+	lock();
+	Sound::PlayingSample::pan.set(new_pan, ramp);
+	unlock();
+}
 
 void Sound::init() {
 	if (SDL_InitSubSystem(SDL_INIT_AUDIO) != 0) {

@@ -158,8 +158,7 @@ GAME_NAMES =
 	load_wav
 	load_opus
 	DrawSprites
-	MenuMode
-	StoryMode
+	SpookyGrid
 	Sprite
 	data_path
 	main

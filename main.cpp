@@ -2,7 +2,7 @@
 #include "Mode.hpp"
 
 //Starting mode:
-#include "StoryMode.hpp"
+#include "SpookyGrid.hpp"
 
 //Deal with calling resource loading functions:
 #include "Load.hpp"
@@ -53,9 +53,9 @@ int main(int argc, char **argv) {
 
 	//create window:
 	SDL_Window *window = SDL_CreateWindow(
-		"gp19 the planet of choices", //TODO: remember to set a title for your game!
+		"SlenderMaN: The Sixth Arrival", //TODO: remember to set a title for your game!
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		512, 448, //TODO: modify window size if you'd like
+		900, 900, //TODO: modify window size if you'd like
 		SDL_WINDOW_OPENGL
 		| SDL_WINDOW_RESIZABLE //uncomment to allow resizing
 		| SDL_WINDOW_ALLOW_HIGHDPI //uncomment for full resolution on high-DPI screens
@@ -99,7 +99,7 @@ int main(int argc, char **argv) {
 	call_load_functions();
 
 	//------------ create game mode + make current --------------
-	Mode::set_current(std::make_shared< StoryMode >());
+	Mode::set_current(std::make_shared< GridMode >());
 
 	//------------ main loop ------------
 
@@ -136,7 +136,7 @@ int main(int argc, char **argv) {
 				} else if (evt.type == SDL_QUIT) {
 					Mode::set_current(nullptr);
 					break;
-				} else if (evt.type == SDL_KEYDOWN && evt.key.keysym.sym == SDLK_PRINTSCREEN) {
+				} else if (evt.type == SDL_KEYDOWN && evt.key.keysym.sym == SDLK_p) {
 					// --- screenshot key ---
 					std::string filename = "screenshot.png";
 					std::cout << "Saving screenshot to '" << filename << "'." << std::endl;
